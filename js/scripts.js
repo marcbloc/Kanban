@@ -3,7 +3,7 @@ $(function(){
 		var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
 		var str = '';
 		for(i = 0; i < 10; i++) {
-			str += chars[Math.floor(Math.random() * chars.lenght)];
+			str += chars[Math.floor(Math.random() * chars.length)];
 		}
 		return str;	
 	}
@@ -13,11 +13,11 @@ $(function(){
 		this.name = name;
 		this.$element = createColumn();
 		function createColumn() {
-			var $column = $('<div>').addClass('column col-md-3 col-sm-6 col-xs-12');
+			var $column = $('<div>').addClass('column col-xs-12 col-md-6 col-lg-4');
 			var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
 			var $columnCardList = $('<ul>').addClass('column-card-list');
-			var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-			var $columnAddCard = $('<button>').addClass('add-card').text('Add Card');
+			var $columnDelete = $('<button>').addClass('btn-delete btn btn-info').text('x');
+			var $columnAddCard = $('<button>').addClass('add-card btn btn-primary').text('Add Card');
 			$columnDelete.click(function() {
 				self.removeColumn();
 			});
@@ -46,13 +46,13 @@ $(function(){
 		this.description = description;
 		this.$element = createCard();
 		function createCard() {
-			var $card = $('li').addClass('card');
+			var $card = $('<li>').addClass('card');
 			var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-			var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+			var $cardDelete = $('<button>').addClass('btn-delete btn btn-primary').text('x');
 			$cardDelete.click(function() {
 					self.removeCard();
 			});
-				$card.append($cardDelete).append($cardDescription);
+				$card.append($cardDescription).append($cardDelete);
 				return $card;
 		}
 	}
@@ -92,7 +92,7 @@ $(function(){
 	board.addColumn(doneColumn);
 
 	var card1 = new Card('Nowe zadanie'); 
-	var card2 = new Card('Stworzyc tablice kanban');
+	//var card2 = new Card('Stworzyc tablice kanban');
 		
 	todoColumn.addCard(card1); 
 	doingColumn.addCard(card2);
