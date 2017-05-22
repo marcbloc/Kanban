@@ -25,6 +25,10 @@ h1 {
 
 p {
 	font-size: 18px;
+	color: #000;
+}
+.card {
+	height: 150px;
 }
 
 .column-title {
@@ -38,5 +42,6 @@ p {
 
 .card-description {
 	background-color: #fff;
+	height: 100%;
 }
 
